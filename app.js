@@ -119,7 +119,7 @@ const getEmployeeInfo = async () => {
 
 // Generates a new Manager class instance 
 // logs that particular instance to the console for the user
-// pushes the generated class iinstance to the allEmployees array
+// pushes the generated class instance to the allEmployees array
 const addManager = async (name, id, email) => {
 
     const getManagerInfo = await 
@@ -142,7 +142,7 @@ const addManager = async (name, id, email) => {
 
 // Generates a new Engineer class instance 
 // logs that particular instance to the console for the user
-// pushes the generated class iinstance to the allEmployees array
+// pushes the generated class instance to the allEmployees array
 const addEngineer = async (name, id, email) => {
 
     const getEngineerInfo = await 
@@ -173,7 +173,7 @@ const addEngineer = async (name, id, email) => {
 
 // Generates a new Intern class instance 
 // logs that particular instance to the console for the user
-// pushes the generated class iinstance to the allEmployees array
+// pushes the generated class instance to the allEmployees array
 const addIntern = async (name, id, email) => {
 
     const getInternInfo = await 
@@ -203,7 +203,7 @@ const addIntern = async (name, id, email) => {
     addEmployee();
 }
 
-// write html data from render function to output.html
+// write html data from render function to "./output/team.html"
 const writeFunction = async () => {
     let html = await render(allEmployees);
     try {
