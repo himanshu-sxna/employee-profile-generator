@@ -203,10 +203,9 @@ const addIntern = async (name, id, email) => {
     addEmployee();
 }
 
+// write html data from render function to output.html
 const writeFunction = async () => {
-
     let html = await render(allEmployees);
-
     try {
         fs.writeFileSync(outputPath, html);
         } catch(err) {
