@@ -38,6 +38,9 @@ const addEmployee = () => {
         // conditional blocks to generate the above prompts or call the getEmplyeeInfo function
         if (answers.generate_roster) {
             console.log("No more employees to be added.\n Generating your roster");
+            // when no more employees are to be added and the allEmployees array has atleast 1 object
+            // the below function renders the html with render function in "./lib/htmlRenderer.js"
+            // writes html to "/output/team.html"
             writeFunction();
         }else if (!answers.add_employee) {
             console.log("No more employees to be added. Thank you for using the employee profile generator!");
