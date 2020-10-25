@@ -27,7 +27,7 @@ const addEmployee = () => {
             name: "generate_roster",
             type: "confirm",
             message: "Would you like to generate the roster now?",
-            when: allEmployees.length >= 1
+            when: (answers) => allEmployees.length >= 1 && !answers.add_employee
             // the above prompt asks the user to generate the roster
             // only if they have finished entering all employee details
             // this prompt only triggers when there is atleast 1 employee object in the allEmployees array
@@ -37,7 +37,7 @@ const addEmployee = () => {
     .then((answers) => {
         // conditional blocks to generate the above prompts or call the getEmplyeeInfo function
         if (answers.generate_roster) {
-            console.log("No more employees to be added.\n Generating your roster");
+            console.log("No more employees to be added.\nGenerating your roster...");
             // when no more employees are to be added and the allEmployees array has atleast 1 object
             // the below function renders the html with render function in "./lib/htmlRenderer.js"
             // writes html to "/output/team.html"
@@ -137,7 +137,6 @@ const addManager = async (name, id, email) => {
     allEmployees.push(mgr);
     console.log("A new manager has been added to the roster.")
     console.log(mgr);
-    console.log(`All Employees:\n${JSON.stringify(allEmployees)}`);
     addEmployee();
 }
 
@@ -169,7 +168,6 @@ const addEngineer = async (name, id, email) => {
     allEmployees.push(engnr);
     console.log("A new engineer has been added to the roster.");
     console.log(engnr);
-    console.log(`All Employees:\n${JSON.stringify(allEmployees)}`);
     addEmployee();
 }
 
@@ -202,7 +200,6 @@ const addIntern = async (name, id, email) => {
     allEmployees.push(intern);
     console.log("A new intern has been added to the roster.")
     console.log(intern);
-    console.log(`All Employees:\n${JSON.stringify(allEmployees)}`);
     addEmployee();
 }
 
@@ -215,6 +212,7 @@ const writeFunction = async () => {
           // An error occurred
           console.error(err);
         }
+    console.log("Your roster has been generated!")
 }
 
 // initiate function on startup
